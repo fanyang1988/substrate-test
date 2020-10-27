@@ -11,6 +11,36 @@ Follow these steps to prepare a local Substrate development environment :hammer_
 Setup instructions can be found at the
 [Substrate Developer Hub](https://substrate.dev/docs/en/knowledgebase/getting-started).
 
+**Note**
+
+Should use `nightly-2020-10-05` toolchain:
+
+At First, list all toolchain:
+
+```bash
+rustup toolchain list
+```
+
+uninstall others:
+
+```bash
+rustup uninstall nightly-2020-10-05-x86_64-unknown-linux-gnu
+rustup uninstall nightly-x86_64-unknown-linux-gnu
+```
+
+use default as `nightly-2020-10-06-x86_64-unknown-linux-gnu`
+
+```bash
+rustup toolchain install nightly-2020-10-06
+rustup default nightly-2020-10-06-x86_64-unknown-linux-gnu 
+```
+
+add `wasm32-unknown-unknown`
+
+```bash
+rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
+```
+
 ### Build
 
 Once the development environment is set up, build the node template. This command will build the
